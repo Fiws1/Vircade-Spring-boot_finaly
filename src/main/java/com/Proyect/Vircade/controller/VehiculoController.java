@@ -99,7 +99,7 @@ public class VehiculoController {
         }
 
         vehiculoService.guardarVe(Vehiculo);
-        log.info("Vehiculo guardado con exito!");
+        System.out.println("Vehiculo guardado con exito!");
         return "redirect:/Vehiculos";
     }
 
@@ -114,14 +114,14 @@ public class VehiculoController {
         modelo.addAttribute("liscombu",licom);
         modelo.addAttribute("Vehiculo",Vehiculo);
         modelo.addAttribute("i", "Vehiculos");
-        log.info("Vehiculo modificada con exito!");
+        System.out.println("Vehiculo modificada con exito!");
         return "view/Vehiculo/modificar";
     }
 
     @DeleteMapping("/Vehiculosde/{id}")
     public String eliminarVehiculos(@PathVariable("id") int id) {
         vehiculoService.eleminarVe(id);
-        log.info("Vehiculo Eliminada con exito!");
+        System.out.println("Vehiculo Eliminada con exito!");
         return "redirect:/Vehiculos";
     }
 }

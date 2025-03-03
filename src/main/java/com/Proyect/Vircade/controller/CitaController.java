@@ -59,7 +59,7 @@ public class CitaController {
         modelo.addAttribute("lisConce",liistaConcesionario);
         modelo.addAttribute("Cita",Cita);
         servicio.guardarCita(Cita);
-        log.info("Cita guardado con exito!");
+        System.out.println("Cita guardado con exito!");
 
         return "redirect:/citas";
     }
@@ -74,14 +74,14 @@ public class CitaController {
         modelo.addAttribute("lisasesor", listasesor);
         modelo.addAttribute("lisConce",listaConcesionario);
         modelo.addAttribute("Cita",Cita);
-        log.info("Cita modificada con exito!");
+        System.out.println("Cita modificada con exito!");
         return "view/cita/modificar";
     }
 
     @DeleteMapping("/Citasde/{id}")
     public String eliminarCitas(@PathVariable("id") int id) {
         servicio.eleminarCita(id);
-        log.info("Cita Eliminada con exito!");
+        System.out.println("Cita Eliminada con exito!");
         return "redirect:/citas";
     }
 }

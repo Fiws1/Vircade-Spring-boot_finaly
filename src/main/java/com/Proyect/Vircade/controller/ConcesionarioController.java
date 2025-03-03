@@ -55,7 +55,7 @@ public class ConcesionarioController {
         modelo.addAttribute("i", "Concesionarios");
 
         concesionarioService.guardarConce(Concesionario);
-        log.info("Concesionario guardado con exito!");
+        System.out.println("Concesionario guardado con exito!");
         return "redirect:/Concesionarios";
     }
 
@@ -66,14 +66,14 @@ public class ConcesionarioController {
         modelo.addAttribute("lidispo",lidispo);
         modelo.addAttribute("Concesionario",Concesionario);
         modelo.addAttribute("i", "Concesionarios");
-        log.info("Concesionario modificada con exito!");
+        System.out.println("Concesionario modificada con exito!");
         return "view/Concesionario/modificar";
     }
 
     @DeleteMapping("/Concesionariosde/{id}")
     public String eliminarConcesionarios(@PathVariable("id") int id) {
         concesionarioService.eleminarConce(id);
-        log.info("Concesionario Eliminado con exito!");
+        System.out.println("Concesionario Eliminado con exito!");
         return "redirect:/Concesionarios";
     }
 }

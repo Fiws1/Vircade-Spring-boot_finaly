@@ -37,7 +37,7 @@ public class TipoVehiculoController {
     public String guardartipovehiculos(Tipo_Vehiculo tipo_vehiculo, @NotNull Model modelo) {
         servicio.guardarTiposVehiculos(tipo_vehiculo);
         modelo.addAttribute("tipo_vehiculo",tipo_vehiculo );
-        out.println("Tipo de vehiculo guardado con exito!");
+        System.out.println("Tipo de vehiculo guardado con exito!");
         return "redirect:/tipovehiculos";
     }
 
@@ -45,14 +45,14 @@ public class TipoVehiculoController {
     public String actualizartipovehiculos(@PathVariable("id") int id, @NotNull Model modelo) {
         Tipo_Vehiculo tipo_vehiculo = servicio.obtenerTiposVehiculosPorId(id);
         modelo.addAttribute("tipo_vehiculo",tipo_vehiculo );
-        out.println("Tipo de vehiculo se a modificado con exito!");
+        System.out.println("Tipo de vehiculo se a modificado con exito!");
         return "/view/tipoVehiculo/modificar";
     }
 
     @DeleteMapping("/tipovehiculosde/{id}")
     public String eliminartipovehiculos(@PathVariable("id") int id) {
         servicio.eliminarTiposVehiculos(id);
-        out.println("Tipo de vehiculo Eliminado con exito!");
+        System.out.println("Tipo de vehiculo Eliminado con exito!");
         return "redirect:/tipovehiculos";
     }
 }
