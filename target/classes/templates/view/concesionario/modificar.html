@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Modificacion de Tipos de Vehículo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/styleform.css}">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<header>
+    <img th:src="@{/img/logo1.jpg}" alt="VIRCADE Logo"/>
+    <br><br>
+    <div style="text-align: center;" class="box">
+        <a type="button" th:href="@{/home}" class="btn btn-secondary">Regresar al dashboard</a>
+    </div>
+</header>
+<br><br>
+<center>
+<div>
+    <div>
+        <div>
+            <a type="button" class="btn btn-secondary" th:href="@{/Concesionarios}">
+                Cancelar
+            </a>
+            <br>
+            <div>
+                <h4>Concesionario</h4>
+            </div>
+            <div>
+                <form method="post" th:object="${Concesionario}" th:action="@{/Concesionariosave}">
+                    <div class="form-group">
+                        <div>
+                            <input type="hidden" th:field="*{idConcesionario}">
+                            <label for="nombreConcesionario">Nombre del Concesionario:</label>
+                            <input class="form-control" id="nombreConcesionario" name="nombreConcesionario" th:field="*{nombreConcesionario}" required type="text">
+                        </div>
+                        <div>
+                            <label for="direccion">Dirección:</label>
+                            <input class="form-control" id="direccion" name="direccion" th:field="*{direccion}" required type="text">
+                        </div>
+                        <div>
+                            <label for="disponibilidad">Disponibilidad:</label>
+                            <select class="form-control"
+                                    id="disponibilidad"
+                                    name="disponibilidad"
+                                    th:field="*{disponibilidad}"
+                                    required>
+                                <option th:each="disponibilidad:${lidispo}"
+                                        th:value="${disponibilidad.idDispo}"
+                                        th:text="${disponibilidad.disponibilidad}">
+                                </option>
+                            </select>
+                        </div>
+                        <small></small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</center>
+<br><br>
+<footer class="text-center mt-5">
+    <div class="foot">
+        <h3>Contáctanos</h3>
+    </div>
+    <div class="logo">
+        <img th:src="@{/img/Capturalogo.JPG}" alt="logo"/>
+    </div>
+    <div style="text-align: center;" class="redes">
+        <p>Redes Sociales:</p>
+        <img th:src="@{/img/pic_whats.png}" alt="Whatsapp"/>
+        <img th:src="@{/img/pic_face.png}" alt="Facebook"/>
+        <img th:src="@{/img/pic_insta.png}" alt="Instagram"/>
+        <p>Correo: <br/>
+            vircade@gmail.com</p>
+    </div>
+    <div style="text-align: center;" class="nombres">
+        <p>Laura Daniela Benavides Rodriguez: Diseñadora Backend</p>
+        <p>Shanon Natalia Rodriguez: Diseñadora Frontend</p>
+        <p>Santiago Vega: Diseñador Web</p>
+        <p>Nicolas Salamanca:Diseñador Web</p>
+    </div>
+</footer>
+</body>
+</html>

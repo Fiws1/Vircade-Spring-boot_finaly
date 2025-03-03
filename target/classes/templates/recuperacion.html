@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Recuperacion Contraseña</title>
+    <meta charset="UTF-8">
+    <title>Login - VIRCADE</title>
+    <link rel="stylesheet" th:href="@{/css/styleform.css}"/>
+    <style>
+      a{
+      cursor: pointer;
+      background-color: #fb1f57;
+      padding: 10px;
+      border-radius: 4px;
+      }
+    </style>
+</head>
+<body>
+  <header>
+    <img th:src="@{/img/logo1.jpg}" alt="VIRCADE Logo"/>
+  </header>
+  <br>
+  <br>
+  <h1>Recuperacion de contraseña</h1>
+  <br>
+  <center>
+    <br>
+    <div th:if="${message}" th:text="${message}"></div>
+    <br>
+    <br>
+    <form th:action="@{/recuperar}" method="post">
+      <div class="form-group">
+          <div class="form-control">
+            <label for="email">Correo:</label>
+            <input class="form-control btn btn-primary"
+                   type="email" id="email"
+                   name="correo"
+                   placeholder="Digite su email"
+                   required/>
+          </div>
+      </div>
+      <div class="form-control">
+        <div class="row">
+          <button class="form-control btn btn-primary" type="submit">Enviar correo</button>
+        </div>
+      </div>
+    </form>
+    <br><br>
+    <div class="text-center">
+      <div class="row">
+        <a th:href="@{/login}">Cancelar</a>
+      </div>
+    </div>
+  </center>
+  <br><br>
+  <footer class="text-center mt-5">
+    <div class="foot">
+      <h3>Contáctanos</h3>
+    </div>
+    <div class="logo">
+      <img th:src="@{/img/Capturalogo.JPG}" alt="logo"/>
+    </div>
+    <div style="text-align: center;" class="redes">
+      <p>Redes Sociales:</p>
+      <img th:src="@{/img/pic_whats.png}" alt="Whatsapp"/>
+      <img th:src="@{/img/pic_face.png}" alt="Facebook"/>
+      <img th:src="@{/img/pic_insta.png}" alt="Instagram"/>
+      <p>Correo: <br/>
+        vircade@gmail.com</p>
+    </div>
+    <div style="text-align: center;" class="nombres">
+      <p>Laura Daniela Benavides Rodriguez: Diseñadora Backend</p>
+      <p>Shanon Natalia Rodriguez: Diseñadora Frontend</p>
+      <p>Santiago Vega: Diseñador Web</p>
+      <p>Nicolas Salamanca:Diseñador Web</p>
+    </div>
+  </footer>
+</body>
+</html>

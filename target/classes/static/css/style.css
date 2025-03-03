@@ -1,0 +1,66 @@
+.navbar-brand{
+    width: 15%;
+    margin: 10px 30px;
+}
+.menu h3{
+    margin: 40px 30px;
+    border-bottom: 2px solid #fadb29;
+}
+.menu li{
+    padding-left: 30px;
+}
+.imgRol img{
+    width: 40%;
+    border: 4px solid #fffdfd;
+    box-shadow: 0px 0px 5px #000;
+    border-radius: 50%;
+}
+.menu li:hover{
+    background: #fffdfd;
+    border-bottom: 1px solid salmon;
+    border-top: 1px solid salmon;
+    color: #000;
+}
+/*Pie de página*/
+footer{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    position: center;
+    padding: 15px; 
+    background:#616b72 ;
+    font-size: 1.5vw;
+    flex-direction: column;
+    padding: 10px;
+    border: 4px solid #020202;
+    text-align: center;
+}
+.foot h3{
+    text-align: center;
+}
+.logo{
+    text-align: center;
+    
+}
+.redes img { 
+    padding-right: 10px;
+    padding-bottom: 10px; 
+  
+   
+}
+.redes{
+    position:absolute ;
+    margin: 2.5vw;
+}
+.nombres{
+    text-align:end;
+    margin: 2.5vw;
+}
+.nombres p{
+    font-size: 20px;
+}
+.redes p{
+    font-size: 20px;
+}
+
+header img {
+    height: 10vmin;
+}

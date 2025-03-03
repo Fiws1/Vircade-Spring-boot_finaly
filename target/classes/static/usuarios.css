@@ -1,0 +1,17 @@
+header {
+    text-align: center;
+    padding: 1vmin 0;
+    background-color: #333;
+    border: 4px solid #020202;
+}
+footer{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    padding: 15px;
+    font-size: 15px;
+    flex-direction: column;
+    padding: 10px;
+    border: 4px solid #020202;
+    text-align: center;
+    color: #fff;
+    background-color: #333;
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <title>VIRCADE</title>
+</head>
+<body>
+    <!--Encabezado-->
+    <header>
+        <img th:src="@{/imagenes/logo.jpg}" alt="VIRCADE Logo"/>
+    </header>
+    <!--navegacion-->
+    <nav>
+        <div id="hea">
+            <ul class="nav">
+                <li> <a th:href="@{/home}">Dashboard</a></li>
+                <li><a th:href="@{/Sobre_nosotros}">Sobre Nosotros</a></li>
+                <li>
+                    <a href="">Concesionarios</a>
+                    <ul class="">
+                        <li> <a th:href="@{/Chevrolet}">Chevrolet</a></li>
+                        <li> <a th:href="@{/Renew_Autostok-Renault}">Renew Autostok-Renault</a></li>
+                    </ul>
+                </li>
+                <li><a>Vehículos</a>
+                    <ul>
+                        <li>
+                            <div class="">
+                                <li> <a href="">Marca </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" th:href="@{/Chevrolet}">Chevrolet</a></li>
+                                        <li><a class="dropdown-item" th:href="@{/Renew_Autostok-Renault}">Renault</a></li>
+                                    </ul>
+                                </li>
+                                <li> <a href="">Tipo de Vehículo </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" th:href="@{/Automovil}">Automovil</a></li>
+                                        <li><a class="dropdown-item" th:href="@{/camioneta}">Camioneta</a></li>
+                                    </ul>
+                                </li>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--contenido - imagen-->
+    <main>
+        <img th:src="@{/imagenes/carro02.jpg}" alt="img 1" title="pic1">
+    </main>
+    <!--contenido de imagen - titulo - texto - baton -->
+<div class="contenedorT" id="titulos">
+    <section>
+        <h2>Chevrolet</h2>
+        <img th:src="@{/imagenes/toyota.jpg}" alt="img1">
+        <p>En nuestro concesionario, descubrirás lo mejor en vehículos. Desde opciones elegantes y eficientes hasta potentes todoterrenos, tenemos el automóvil perfecto para ti.
+        </p>
+        <a th:href="@{/Chevrolet}" class="bottom">Más información...</a>
+    </section>
+    <aside>
+        <h2>Renew Autostok-Renault</h2>
+        <img th:src="@{/imagenes/renault.jpeg}" alt="imag2">
+        <p>Descubre la excelencia en nuestro concesionario, donde nuestros mejores automóviles esperan para superar tus expectativas. Ven y experimenta el lujo, rendimiento y tecnología de vanguardia que solo podemos ofrecerte.
+        </p>
+        <a th:href="@{/Renew_Autostok-Renault}" class="bottom">Más información...</a>
+    </aside >
+    </div>
+    <!--se dedica-->
+    <div id="listas" class="center">
+       <center>
+           <br>
+           <br>
+           <h1>¿A qué nos dedicamos?</h1>
+       </center>
+    </div>
+    <article>
+        <div class="listas color1">
+        <p>Ayudamos a facilitar a los clientes la búsqueda de autos al entrar en nuestro sistema y convertirse en usuarios. El proyecto se centra en ofrecer a los usuarios la visualización de concesionarios cercanos según su ubicación o preferencia de dirección. Los usuarios podrán ver los tipos y colores de autos disponibles, así como verificar su disponibilidad. Además, facilitaremos la comunicación con el concesionario seleccionado para que los usuarios puedan agendar citas, hacer preguntas o apartar vehículos. Es importante destacar que nuestro sitio no realiza ventas, simplemente facilita la búsqueda del auto deseado por el usuario.</p>
+        <a th:href="@{/Sobre nosotros}" class="bottom">Más información...</a>
+        </div>
+    </article>
+    <!--pie de pagina-->
+    <footer class="text-center mt-5">
+        <div class="foot">
+            <h3>Contáctanos</h3>
+        </div>
+        <div class="logo">
+            <img th:src="@{/img/Capturalogo.JPG}" alt="logo"/>
+        </div>
+        <div style="text-align: center;" class="redes">
+            <p>Redes Sociales:</p>
+            <img th:src="@{/img/pic_whats.png}" alt="Whatsapp"/>
+            <img th:src="@{/img/pic_face.png}" alt="Facebook"/>
+            <img th:src="@{/img/pic_insta.png}" alt="Instagram"/>
+            <p>Correo: <br/>
+                vircade@gmail.com</p>
+        </div>
+        <div style="text-align: center;" class="nombres">
+            <p>Laura Daniela Benavides Rodriguez: Diseñadora Backend</p>
+            <p>Shanon Natalia Rodriguez: Diseñadora Frontend</p>
+            <p>Santiago Vega: Diseñador Web</p>
+            <p>Nicolas Salamanca:Diseñador Web</p>
+        </div>
+    </footer>
+</body>
+</html>
