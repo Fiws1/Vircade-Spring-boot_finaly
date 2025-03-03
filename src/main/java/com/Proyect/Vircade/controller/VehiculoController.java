@@ -5,6 +5,7 @@ import com.Proyect.Vircade.service.CombustibleService;
 import com.Proyect.Vircade.service.ConcesionarioService;
 import com.Proyect.Vircade.service.Tipo_vehiculoService;
 import com.Proyect.Vircade.service.VehiculoService;
+import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -15,7 +16,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -23,8 +23,7 @@ import java.text.NumberFormat;
 import java.util.List;
 import java.util.Locale;
 
-import static java.lang.System.out;
-
+@Slf4j
 @Controller
 @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST})
 public class VehiculoController {
@@ -94,13 +93,13 @@ public class VehiculoController {
                 Files.write(rutaCompleta, bytesImg);
 
                 Vehiculo.setImagen(nombreImagen);
-            } catch (IOException e) {
-                e.printStackTrace();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
             }
         }
 
         vehiculoService.guardarVe(Vehiculo);
-        out.println("Vehiculo guardado con exito!");
+        log.info("Vehiculo guardado con exito!");
         return "redirect:/Vehiculos";
     }
 
@@ -115,14 +114,14 @@ public class VehiculoController {
         modelo.addAttribute("liscombu",licom);
         modelo.addAttribute("Vehiculo",Vehiculo);
         modelo.addAttribute("i", "Vehiculos");
-        out.println("Vehiculo modificada con exito!");
+        log.info("Vehiculo modificada con exito!");
         return "view/Vehiculo/modificar";
     }
 
     @DeleteMapping("/Vehiculosde/{id}")
     public String eliminarVehiculos(@PathVariable("id") int id) {
         vehiculoService.eleminarVe(id);
-        out.println("Vehiculo Eliminada con exito!");
+        log.info("Vehiculo Eliminada con exito!");
         return "redirect:/Vehiculos";
     }
 }

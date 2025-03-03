@@ -19,4 +19,19 @@ public class Combustible {
     @Column(name = "Tipo_combustible", nullable = false, length = 20)
     private String tipoCombustible;
 
+    public int getIdCombustible() {
+        return idCombustible;
+    }
+
+    public void setIdCombustible(int idCombustible) {
+        this.idCombustible = idCombustible;
+    }
+
+    public String getTipoCombustible() {
+        return tipoCombustible;
+    }
+
+    public void setTipoCombustible(String tipoCombustible) {
+        this.tipoCombustible = tipoCombustible;
+    }
 }

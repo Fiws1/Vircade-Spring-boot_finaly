@@ -29,4 +29,35 @@ public class Concesionario {
     @JoinColumn(name = "Disponibilidades", nullable = false)
     private Disponibilidad disponibilidad;
 
+    public int getIdConcesionario() {
+        return idConcesionario;
+    }
+
+    public void setIdConcesionario(int idConcesionario) {
+        this.idConcesionario = idConcesionario;
+    }
+
+    public String getNombreConcesionario() {
+        return nombreConcesionario;
+    }
+
+    public void setNombreConcesionario(String nombreConcesionario) {
+        this.nombreConcesionario = nombreConcesionario;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public Disponibilidad getDisponibilidad() {
+        return disponibilidad;
+    }
+
+    public void setDisponibilidad(Disponibilidad disponibilidad) {
+        this.disponibilidad = disponibilidad;
+    }
 }

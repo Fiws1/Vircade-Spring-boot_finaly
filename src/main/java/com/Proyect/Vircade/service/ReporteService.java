@@ -33,7 +33,7 @@ public class ReporteService {
 
             List<Asesor> asesores = asesorRepository.findAll();
             for (Asesor asesor : asesores) {
-                Paragraph asesorTitulo = new Paragraph("Asesor: " + asesor.getPNomAsesor() + " " + asesor.getPApeAsesor())
+                Paragraph asesorTitulo = new Paragraph("Asesor: " + asesor.getpNomAsesor() + " " + asesor.getpApeAsesor())
                         .setFontSize(18)
                         .setBackgroundColor(ColorConstants.LIGHT_GRAY)
                         .setPadding(20)

@@ -26,4 +26,19 @@ public class Disponibilidad {
         SI, NO
     }
 
+    public int getIdDispo() {
+        return idDispo;
+    }
+
+    public void setIdDispo(int idDispo) {
+        this.idDispo = idDispo;
+    }
+
+    public DisponibilidadEstado getDisponibilidad() {
+        return disponibilidad;
+    }
+
+    public void setDisponibilidad(DisponibilidadEstado disponibilidad) {
+        this.disponibilidad = disponibilidad;
+    }
 }

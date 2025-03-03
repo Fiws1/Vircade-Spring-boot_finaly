@@ -55,4 +55,107 @@ public class Vehiculo {
     @Column(name = "precioFormateado", nullable = true)
     private String precioFormateado;
 
+    public int getIdVehiculo() {
+        return idVehiculo;
+    }
+
+    public void setIdVehiculo(int idVehiculo) {
+        this.idVehiculo = idVehiculo;
+    }
+
+    public String getNomvehiculo() {
+        return nomvehiculo;
+    }
+
+    public void setNomvehiculo(String nomvehiculo) {
+        this.nomvehiculo = nomvehiculo;
+    }
+
+    public String getLinea() {
+        return linea;
+    }
+
+    public void setLinea(String linea) {
+        this.linea = linea;
+    }
+
+    public String getCilindraje() {
+        return cilindraje;
+    }
+
+    public void setCilindraje(String cilindraje) {
+        this.cilindraje = cilindraje;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public int getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
+    public String getModeloVehiculo() {
+        return modeloVehiculo;
+    }
+
+    public void setModeloVehiculo(String modeloVehiculo) {
+        this.modeloVehiculo = modeloVehiculo;
+    }
+
+    public String getMarcaVehiculo() {
+        return marcaVehiculo;
+    }
+
+    public void setMarcaVehiculo(String marcaVehiculo) {
+        this.marcaVehiculo = marcaVehiculo;
+    }
+
+    public Combustible getCombustibleVehiculo() {
+        return combustibleVehiculo;
+    }
+
+    public void setCombustibleVehiculo(Combustible combustibleVehiculo) {
+        this.combustibleVehiculo = combustibleVehiculo;
+    }
+
+    public Tipo_Vehiculo getTipoVehiculo() {
+        return tipoVehiculo;
+    }
+
+    public void setTipoVehiculo(Tipo_Vehiculo tipoVehiculo) {
+        this.tipoVehiculo = tipoVehiculo;
+    }
+
+    public Concesionario getConcesionario() {
+        return concesionario;
+    }
+
+    public void setConcesionario(Concesionario concesionario) {
+        this.concesionario = concesionario;
+    }
+
+    public String getPrecioFormateado() {
+        return precioFormateado;
+    }
+
+    public void setPrecioFormateado(String precioFormateado) {
+        this.precioFormateado = precioFormateado;
+    }
 }

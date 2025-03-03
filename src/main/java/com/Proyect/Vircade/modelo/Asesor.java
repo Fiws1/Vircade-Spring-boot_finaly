@@ -52,4 +52,76 @@ public class Asesor {
                 ", correoAsesor='" + correoAsesor + '\'' +
                 '}';
     }
+
+    public int getIdAsesor() {
+        return idAsesor;
+    }
+
+    public void setIdAsesor(int idAsesor) {
+        this.idAsesor = idAsesor;
+    }
+
+    public String getpNomAsesor() {
+        return pNomAsesor;
+    }
+
+    public void setpNomAsesor(String pNomAsesor) {
+        this.pNomAsesor = pNomAsesor;
+    }
+
+    public String getsNomAsesor() {
+        return sNomAsesor;
+    }
+
+    public void setsNomAsesor(String sNomAsesor) {
+        this.sNomAsesor = sNomAsesor;
+    }
+
+    public String getpApeAsesor() {
+        return pApeAsesor;
+    }
+
+    public void setpApeAsesor(String pApeAsesor) {
+        this.pApeAsesor = pApeAsesor;
+    }
+
+    public String getsApeAsesor() {
+        return sApeAsesor;
+    }
+
+    public void setsApeAsesor(String sApeAsesor) {
+        this.sApeAsesor = sApeAsesor;
+    }
+
+    public String getCorreoAsesor() {
+        return correoAsesor;
+    }
+
+    public void setCorreoAsesor(String correoAsesor) {
+        this.correoAsesor = correoAsesor;
+    }
+
+    public String getTelefonoAsesor() {
+        return telefonoAsesor;
+    }
+
+    public void setTelefonoAsesor(String telefonoAsesor) {
+        this.telefonoAsesor = telefonoAsesor;
+    }
+
+    public List<Cita> getCita() {
+        return cita;
+    }
+
+    public void setCita(List<Cita> cita) {
+        this.cita = cita;
+    }
+
+    public Concesionario getConcesionarioAsig() {
+        return concesionarioAsig;
+    }
+
+    public void setConcesionarioAsig(Concesionario concesionarioAsig) {
+        this.concesionarioAsig = concesionarioAsig;
+    }
 }

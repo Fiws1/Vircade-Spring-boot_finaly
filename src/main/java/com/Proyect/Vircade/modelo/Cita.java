@@ -48,4 +48,60 @@ public class Cita {
                 ", asesor=" + (asesor != null ? asesor.getCorreoAsesor() : "null") + // Evitar recursión
                 '}';
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getHora() {
+        return hora;
+    }
+
+    public void setHora(String hora) {
+        this.hora = hora;
+    }
+
+    public String getTipoCita() {
+        return tipoCita;
+    }
+
+    public void setTipoCita(String tipoCita) {
+        this.tipoCita = tipoCita;
+    }
+
+    public Asesor getAsesor() {
+        return asesor;
+    }
+
+    public void setAsesor(Asesor asesor) {
+        this.asesor = asesor;
+    }
+
+    public Usuario getClienteRelacionado() {
+        return clienteRelacionado;
+    }
+
+    public void setClienteRelacionado(Usuario clienteRelacionado) {
+        this.clienteRelacionado = clienteRelacionado;
+    }
+
+    public Concesionario getConcesionarioAsig() {
+        return concesionarioAsig;
+    }
+
+    public void setConcesionarioAsig(Concesionario concesionarioAsig) {
+        this.concesionarioAsig = concesionarioAsig;
+    }
 }

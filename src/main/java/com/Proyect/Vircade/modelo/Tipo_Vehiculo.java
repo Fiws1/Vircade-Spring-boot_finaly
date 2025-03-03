@@ -18,4 +18,19 @@ public class Tipo_Vehiculo {
     @Column(name = "tipo_vehiculo", nullable = false, length = 20)
     private String tipovehiculo;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTipovehiculo() {
+        return tipovehiculo;
+    }
+
+    public void setTipovehiculo(String tipovehiculo) {
+        this.tipovehiculo = tipovehiculo;
+    }
 }
