@@ -1,0 +1,223 @@
+
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard Cliente</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <!--1 fila: barra navegación-->
+    <div class="row bg-secondary text-secondary-emphasis">
+        <header class="header">
+            <div class="col">
+                <nav class="navbar navbar-expand-lg">
+                    <img th:src="@{/img/logo1.jpg}" alt="VIRCADE Logo"/>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="btn btn-light ml-5" th:href="@{/Inicio}">Inicio</a>
+                            </li>
+                        </ul>
+                        <ul>
+                        </ul>
+                        <ul class="navbar-nav">
+                            <li>
+                                <a class="btn btn-light ml-5" data-toggle="modal"
+                                        data-target="#logoutModal">Cerrar sesión
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+    </div>
+</div>
+<!--2 fila: menu de funcionalidades-->
+<div class="row">
+    <div class="col-md-3 bg-secondary-subtle text-secondary-emphasis menu">
+        <!---Rol-->
+        <div class="imgRol text-center mt-4 mb-3">
+            <img th:src="@{/img/persona.jpg}" alt="">
+        </div>
+        <div class="infoRol text-center">
+            <h5 th:text="${usuario.primerNombre}"></h5>
+            <h5 th:text="${usuario.primerApellido}"></h5>
+        </div>
+        <div class="btonPerfil text-center">
+            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    data-bs-whatevers="">Ver perfil
+            </button>
+            <!-- Button trigger modal -->
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <div class="modal-body">
+                            <!--contenido tarjeta-->
+                            <div class="card">
+                                <img th:src="@{/img/persona.jpg}"
+                                     class="card-img-top img-fluid" alt="Foto Usuario"/>
+                                <div class="card-body">
+                                    <h3 th:text="${usuario.primerNombre}"></h3>
+                                    <h3 th:text="${usuario.primerApellido}"></h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary">Modificar Información</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3>Citas</h3>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{'/citasCliente/' + ${usuario.correo}}">Consultar Citas</a>
+            </li>
+        </ul>
+        <h3>Visita los vehiculos</h3>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/detalle}">Vehiculos</a>
+            </li>
+        </ul>
+        <h3>Comunicate Con un Asesor</h3>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/detalleAsesor}">Comunicación Asesor</a>
+            </li>
+        </ul>
+    </div>
+    <!--2 columna-->
+    <div class="col-md-9">
+        <div class="col-12">
+            <center><h2>Vehículos más seguros</h2></center>
+        </div>
+        <div class="row">
+            <div class="col">
+                <!--Tabla de carros-->
+                <table id="Solicitudes" class="display" style="width:100%">
+                    <thead>
+                    <tr>
+                        <th># Puesto</th>
+                        <th>Nombre de Vehiculo</th>
+                        <th>Marca</th>
+                        <th>Concesionario</th>
+                        <th>Visualizar</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Renault Alaskan</td>
+                        <td>Renault</td>
+                        <td>Renew_Autostok-Renault</td>
+                        <td><a class="nav-link" href="vehiculomas seguro_alaskan.html">Ver</a></td>
+
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Chevrolet Onix Turbo</td>
+                        <td>Chevrolet</td>
+                        <td>Chevrolet San Jorge</td>
+                        <td><a class="nav-link" href="vehiculomas_seguro_chevroletonixturbo.html">Ver</a></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Renault Stepway</td>
+                        <td>Renault</td>
+                        <td>Renew_Autostok-Renault</td>
+                        <td><a class="nav-link" href="vehiculomas_seguro_renaultstepway.html">Ver</a></td>
+                    </tr>
+                </table>
+                <center><img th:src="@{/img/3renolt.jpg}" width="50%"  alt=""></center>
+                <br>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="logoutModalLabel">Cerrar sesión</h5>
+                    <button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que deseas cerrar sesión?
+                </div>
+                <div class="modal-footer ">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <a th:href="@{/logout}" class="btn btn-light ">Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="text-center mt-5">
+    <div class="foot">
+        <h3>Contáctanos</h3>
+    </div>
+    <div class="logo">
+        <img th:src="@{/img/Capturalogo.JPG}" alt="logo"/>
+    </div>
+    <div style="text-align: center;" class="redes">
+        <p>Redes Sociales:</p>
+        <img th:src="@{/img/pic_whats.png}" alt="Whatsapp"/>
+        <img th:src="@{/img/pic_face.png}" alt="Facebook"/>
+        <img th:src="@{/img/pic_insta.png}" alt="Instagram"/>
+        <p>Correo: <br/>
+            vircade@gmail.com</p>
+    </div>
+    <div style="text-align: center;" class="nombres">
+        <p>Laura Daniela Benavides Rodriguez: Diseñadora Backend</p>
+        <p>Shanon Natalia Rodriguez: Diseñadora Frontend</p>
+        <p>Santiago Vega: Diseñador Web</p>
+        <p>Nicolas Salamanca:Diseñador Web</p>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+<script>
+    new DataTable('#Solicitudes', {
+        language: {
+            search: "Buscar:",
+            paginate: {
+                first: "Primero",
+                last: "Último",
+                next: "Siguiente",
+                previous: "Anterior"
+            },
+            lengthMenu: "Mostrar _MENU_ registros por página",
+            info: "Mostrando _START_ a _END_ de _TOTAL_ registros",
+            infoEmpty: "No hay registros disponibles",
+            infoFiltered: "(filtrado de _MAX_ registros en total)",
+            zeroRecords: "No se encontraron resultados",
+            emptyTable: "No hay datos disponibles en la tabla"
+        }
+    });
+</script>
+</body>
+</html>

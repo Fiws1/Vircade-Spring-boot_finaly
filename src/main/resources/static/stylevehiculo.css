@@ -1,0 +1,21 @@
+body{
+    background-color: rgb(168, 166, 166);
+}
+header img{
+    width: 100%;
+}
+ 
+h1{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 4px 4px 4px #fff;   
+}
+form{
+    text-align:center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 1vw 30vw;
+    background-color: rgba(236, 240, 243, 0.781);
+}
+.preciol{
+    font-weight: 400;
+}

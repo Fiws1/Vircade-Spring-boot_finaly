@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+    min-width: 100%;
+}
+
+header {
+    text-align: center;
+    padding: 1vmin 0;
+    background-color: #333;
+    border: 4px solid #020202;
+}
+
+header img {
+    height: 10vmin;
+}
+
+header commandButton{
+    background-color: #fff;
+    border-radius: 5px;
+    border: 4px solid #020202;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+form {
+    border: 4px solid #020202;
+    width: 50%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.navbar-brand{
+    width: 15%;
+    margin: 10px 30px;
+}
+.menu h3{
+    margin: 40px 30px;
+    border-bottom: 2px solid #fadb29;
+}
+.menu li{
+    padding-left: 30px;
+}
+.imgRol img{
+    width: 40%;
+    border: 4px solid #fffdfd;
+    box-shadow: 0px 0px 5px #000;
+    border-radius: 50%;
+}
+.menu li:hover{
+    background: #fffdfd;
+    border-bottom: 1px solid salmon;
+    border-top: 1px solid salmon;
+    color: #000;
+}
+footer{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    padding: 15px; 
+    font-size: 15px;
+    flex-direction: column;
+    padding: 10px;
+    border: 4px solid #020202;
+    text-align: center;
+    color: #fff;
+    background-color: #333;
+}
+.foot h3{
+    text-align: center;
+}
+.logo{
+    text-align: center;
+    
+}
+.redes img { 
+    padding-right: 10px;
+    padding-bottom: 10px; 
+}
+.redes{
+    position:absolute ;
+    margin: 2.5vw;
+}
+.nombres{
+    text-align:end;
+    margin: 2.5vw;
+}
+.nombres p{
+    font-size: 20px;
+}
+.redes p{
+    font-size: 20px;
+}

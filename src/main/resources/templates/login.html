@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - VIRCADE</title>
+    <link rel="stylesheet" th:href="@{/css/styleform.css}"/>
+</head>
+<body style="text-align: center;">
+    <header>
+        <img th:src="@{/img/logo1.jpg}" alt="VIRCADE Logo"/>
+    </header>
+    <br>
+    <h1>Login</h1>
+    <br>
+    <form th:action="@{/login}" method="post">
+        <div th:if="${param.error}">
+            <div class="alert alert-danger">
+                Usuario o contraseña inválidos
+            </div>
+        </div>
+        <br>
+        <div th:if="${param.logout}">
+            <div class="alert alert-info">
+                Ha cerrado sesión exitosamente
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="username">Digite su Correo : </label>
+            <input id="username" name="username" type="text"
+                   class="form-control" required autofocus
+                   placeholder="Digite su email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password : </label>
+            <input id="password" type="password" name="password"
+                   class="form-control" required autofocus
+                   placeholder="Digite su password">
+        </div>
+        <div class="form-control">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <input type="submit" class="form-control btn btn-primary" name="login-submit" id="login-submit"
+                           value="Iniciar sesión"/>
+                </div>
+            </div>
+        </div>
+    </form>
+    <p>¿No tienes cuenta?</p>
+    <a th:href="@{/registro}">Regístrate aquí</a>
+    <br>
+    <br>
+    <div>
+        <p th:if="${message}" th:text="${message}"></p>
+        <p th:if="${error}" th:text="${error}"></p>
+    </div>
+    <p>¿Olvidaste tu contraseña?</p>
+    <a th:href="@{/recuperacion}" >Recuperar contraseña</a>
+    <!-- Formulario de recuperación de contraseña -->
+    <br>
+    <br>
+    <footer class="text-center mt-5">
+        <div class="foot">
+            <h3>Contáctanos</h3>
+        </div>
+        <div class="logo">
+            <img th:src="@{/img/Capturalogo.JPG}" alt="logo"/>
+        </div>
+        <div style="text-align: center;" class="redes">
+            <p>Redes Sociales:</p>
+            <img th:src="@{/img/pic_whats.png}" alt="Whatsapp"/>
+            <img th:src="@{/img/pic_face.png}" alt="Facebook"/>
+            <img th:src="@{/img/pic_insta.png}" alt="Instagram"/>
+            <p>Correo: <br/>
+                vircade@gmail.com</p>
+        </div>
+        <div style="text-align: center;" class="nombres">
+            <p>Laura Daniela Benavides Rodriguez: Diseñadora Backend</p>
+            <p>Shanon Natalia Rodriguez: Diseñadora Frontend</p>
+            <p>Santiago Vega: Diseñador Web</p>
+            <p>Nicolas Salamanca:Diseñador Web</p>
+        </div>
+    </footer>
+</body>
+</html>

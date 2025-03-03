@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro - VIRCADE</title>
+    <link rel="stylesheet" th:href="@{/css/styleform.css}"/>
+    <style>
+        input[type="tel"], select {
+        width: 90%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    </style>
+</head>
+<body>
+<div style="text-align: center;">
+    <header>
+        <img th:src="@{/img/logo1.jpg}" alt="VIRCADE Logo"/>
+    </header>
+    <br/>
+    <h1>Registro</h1>
+    <br>
+    <div th:if=${param.exito}>
+        <div class="alert alert-info">Se ha registrado exitosamente a
+            la aplicación</div>
+    </div>
+    <div th:if="${param.error}">
+        <div class="alert alert-danger">Ocurrió un error durante el registro. Por favor, inténtalo nuevamente.</div>
+    </div>
+
+    <form th:action="@{/registro/registrar}" method="post" th:object="${usuario}">
+        <div>
+            <div class="row">
+                <label for="correo">  Correo: </label>
+                <br>
+                <input type="email"
+                       id="correo"
+                       th:field="*{correo}"
+                       required  class="form-control"
+                       placeholder="Digite su correo">
+            </div>
+        </div>
+        <div>
+            <div class="row">
+                <label for="contrasenaUsu">Contraseña:</label>
+                <input type="password"
+                       id="contrasenaUsu"
+                       th:field="*{contrasenaUsu}"
+                       required autofocus class="form-control"
+                       placeholder="Digite una contraceña contraseña">
+            </div>
+        </div>
+        <div>
+            <div class="row">
+                <label for="primerNombre">Primer Nombre:</label>
+                <input type="text"
+                       id="primerNombre"
+                       th:field="*{primerNombre}"
+                       required autofocus class="form-control"
+                       placeholder="Digita tu primer nombre">
+            </div>
+        </div>
+        <div>
+            <div class="row">
+                <label for="segundoNombre">Segundo Nombre:</label>
+                <input type="text"
+                       id="segundoNombre"
+                       th:field="*{segundoNombre}"
+                       autofocus class="form-control"
+                       placeholder="Digita tu segundo nombre">
+            </div>
+        </div>
+        <div>
+            <div class="row">
+                <label for="primerApellido">Primer Apellido:</label>
+                <input type="text"
+                       id="primerApellido"
+                       th:field="*{primerApellido}"
+                       required autofocus class="form-control"
+                       placeholder="Digita tu primer apellido">
+            </div>
+        </div>
+        <div>
+            <div class="row">
+                <label for="segundoApellido">Segundo Apellido:</label>
+                <input type="text"
+                       id="segundoApellido"
+                       th:field="*{segundoApellido}"
+                       autofocus class="form-control"
+                       placeholder="Digita tu segundo apellido">
+            </div>
+        </div>
+        <div>
+            <div class="row">
+                <label for="numeroTelefono">Número de Teléfono:</label>
+                <input type="tel"
+                       id="numeroTelefono"
+                       th:field="*{numeroTelefono}"
+                       required autofocus class="form-control"
+                       placeholder="Digita tu numero de celular">
+            </div>
+        </div>
+        <br/>
+        <div class="form-control">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <input type="submit" class="form-control btn btn-primary" value="Registrar">
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <br>
+    <p>¿Ya tienes cuenta?</p>
+    <a th:href="@{/login}">Inicia sesión aquí</a>
+
+    <footer class="text-center mt-5">
+        <div class="foot">
+            <h3>Contáctanos</h3>
+        </div>
+        <div class="logo">
+            <img th:src="@{/img/Capturalogo.JPG}" alt="logo"/>
+        </div>
+        <div style="text-align: center;" class="redes">
+            <p>Redes Sociales:</p>
+            <img th:src="@{/img/pic_whats.png}" alt="Whatsapp"/>
+            <img th:src="@{/img/pic_face.png}" alt="Facebook"/>
+            <img th:src="@{/img/pic_insta.png}" alt="Instagram "/>
+            <p>Correo: <br>vircade@gmail.com</p>
+        </div>
+        <div style="text-align: center;" class="nombres">
+            <p>Laura Daniela Benavides Rodriguez: Diseñadora Backend</p>
+            <p>Shanon Natalia Rodriguez: Diseñadora Frontend </p>
+            <p>Santiago Vega: Diseñador Web</p>
+            <p>Nicolas Salamanca:Diseñador Web</p>
+        </div>
+    </footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+</html>

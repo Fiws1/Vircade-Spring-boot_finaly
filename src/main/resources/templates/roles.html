@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Roles</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="../static/css/estilo.css" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="container mt-4">
+    <h2>Lista de Roles</h2>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#nuevoRolModal">Agregar Rol</button>
+
+    <table class="table table-bordered mt-3">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="rol : ${roles}">
+            <td th:text="${rol.id}"></td>
+            <td th:text="${rol.nombre}"></td>
+            <td>
+                <!-- Botón de editar -->
+                <a th:href="@{/roles/editar/{id}(id=${rol.id})}" class="btn btn-warning btn-sm">Editar</a>
+
+                <!-- Botón de eliminar -->
+                <a th:href="@{/roles/confirmarEliminar/{id}(id=${rol.id})}" class="btn btn-danger btn-sm">Eliminar</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal para agregar un nuevo rol -->
+<div class="modal" id="nuevoRolModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Nuevo Rol</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form th:action="@{/roles/guardar}" method="post">
+                    <div class="form-group">
+                        <label for="nombre">Nombre del Rol:</label>
+                        <input type="text" id="nombre" name="nombre" class="form-control" th:value="${rol.nombre}" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para confirmar eliminación -->
+<div class="modal" id="confirmarEliminarModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Confirmar Eliminación</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>¿Estás seguro de que deseas eliminar este rol?</p>
+                <form th:action="@{/roles/eliminar/{id}(id=${rol.id})}" method="get">
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="text-center mt-5">
+    <div class="foot">
+        <h3>Contáctanos</h3>
+    </div>
+    <div class="logo">
+
+        <img src="../static/img/Capturalogo.JPG" alt="logo">
+
+    </div>
+
+    <div style="text-align: center;" class="redes">
+        <p>Redes Sociales:</p>
+        <img src="../static/img/pic_whats.png" alt="Whatsapp">
+        <img src="../static/img/pic_face.png" alt="Facebook">
+        <img src="../static/img/pic_insta.png" alt="Instagram ">
+        <p>Correo: <br>vircade@gmail.com</p>
+    </div>
+    <div style="text-align: center;" class="nombres">
+
+        <p>Laura Daniela Benavides Rodriguez: Diseñadora Backend</p>
+        <p>Shanon Natalia Rodriguez: Diseñadora Frontend </p>
+        <p>Santiago Vega: Diseñador Web</p>
+        <p>Nicolas Salamanca:Diseñador Web</p>
+
+    </div>
+</footer>
+</body>
+</html>

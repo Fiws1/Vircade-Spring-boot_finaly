@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <title>Renault Alaskan</title>
+</head>
+<body>
+     <!--Encabezado-->
+     <header>
+         <center><img th:src="@{/imagenes/logo.jpg}" alt="Logo"></center>
+     </header>
+
+     <!-- Navegación -->
+     <nav>
+         <div id="hea">
+             <ul class="nav">
+                 <li><a th:href="@{/Inicio}">Inicio</a></li>
+                 <li><a th:href="@{/Sobre_nosotros}">Sobre Nosotros</a></li>
+                 <li>
+                     <a href="#">Concesionarios</a>
+                     <ul>
+                         <li><a th:href="@{/Chevrolet}">Chevrolet</a></li>
+                         <li><a th:href="@{/Renew_Autostok-Renault}">Renew Autostok-Renault</a></li>
+                     </ul>
+                 </li>
+                 <li>
+                     <a href="#">Vehículos</a>
+                     <ul>
+                         <li>
+                             <div>
+                                 <li>
+                                     <a href="#">Marca</a>
+                                     <ul class="dropdown-menu">
+                                         <li><a class="dropdown-item" th:href="@{/Chevrolet}">Chevrolet</a></li>
+                                         <li><a class="dropdown-item" th:href="@{/Renew_Autostok-Renault}">Renault</a></li>
+                                     </ul>
+                                 </li>
+                                 <li>
+                                     <a href="#">Tipo de Vehículo</a>
+                                     <ul class="dropdown-menu">
+                                         <li><a class="dropdown-item" th:href="@{/Automovil}">Automovil</a></li>
+                                         <li><a class="dropdown-item" th:href="@{/camioneta}">Camioneta</a></li>
+                                     </ul>
+                                 </li>
+                             </div>
+                         </li>
+                         <li> <a th:href="@{/home}">Dashboard</a></li>
+                     </ul>
+                 </li>
+             </ul>
+         </div>
+     </nav>
+
+     <!-- Título Vehículo -->
+     <br>
+     <h1 class="titu">Chevrolet Sail 1.5 LT MT GLP 2024</h1>
+
+     <!-- Cuadro en general -->
+     <div class="general">
+         <div class="cardt">
+             <center><img th:src="@{/imagenes/car03chevro.jpg}" class="image" alt="Chevrolet Sail"></center>
+         </div>
+
+         <div class="detalle">
+             <h2>Descripción:</h2>
+             <p>El Chevrolet Sail 1.5 LT MT GLP 2024 es un sedán compacto diseñado para la eficiencia y la practicidad, destacando su sistema de combustible dual que permite alternar entre gasolina y GLP, lo que reduce significativamente los costos de combustible.</p>
+             <ul>
+                 <li>Precio: <span>$ 57.813.118</span></li>
+                 <li>Cilindraje: <span>1.5, DOHC</span></li>
+                 <li>Tipo de Combustible: <span>Gasolina y GLP (Gas Licuado de Petróleo)</span></li>
+                 <li>Disponibilidad: <span>Si</span></li>
+                 <li>Ubicación donde lo puede encontrar: <span>Cra. 30 #8 Sur - 17, Bogotá</span></li>
+             </ul>
+         </div>
+
+         <div class="comunicacion">
+             <p>Visita la página de Chevrolet: <a href="https://www.chevrolet.com.co/" target></a>
+             </p>
+         </div>
+     </div>
+     <!--pie de pagina-->
+     <footer class="text-center mt-5">
+         <div class="foot">
+             <h3>Contáctanos</h3>
+         </div>
+         <div class="logo">
+             <img th:src="@{/img/Capturalogo.JPG}" alt="logo"/>
+         </div>
+         <div style="text-align: center;" class="redes">
+             <p>Redes Sociales:</p>
+             <img th:src="@{/img/pic_whats.png}" alt="Whatsapp"/>
+             <img th:src="@{/img/pic_face.png}" alt="Facebook"/>
+             <img th:src="@{/img/pic_insta.png}" alt="Instagram"/>
+             <p>Correo: <br/>
+                 vircade@gmail.com</p>
+         </div>
+         <div style="text-align: center;" class="nombres">
+             <p>Laura Daniela Benavides Rodriguez: Diseñadora Backend</p>
+             <p>Shanon Natalia Rodriguez: Diseñadora Frontend</p>
+             <p>Santiago Vega: Diseñador Web</p>
+             <p>Nicolas Salamanca:Diseñador Web</p>
+         </div>
+     </footer>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Tipos de Vehículo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/form.css}">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<header>
+    <img th:src="@{/img/logo1.jpg}" alt="VIRCADE Logo"/>
+    <br><br>
+    <div style="text-align: center;" class="box">
+        <a type="button" th:href="@{/home}" class="btn btn-secondary">Regresar al dashboard</a>
+    </div>
+</header>
+<br>
+<body>
+<center>
+<div class="container mt-4" align="center">
+    <div th:if="${mensaje}" class="alert alert-success">
+        <p th:text="${mensaje}"></p>
+    </div>
+    <form method="post">
+        <h2>Lista de Tipos de Vehículo</h2>
+        <div class="col-lg-3">
+            <a href="#" data-toggle="modal" data-target="#nuevoTipoVehiculo" class="btn btn-primary">Agregar tipovehiculo</a>
+        </div>
+        <table id="Solicitudes" style="width:100%" class="table table-bordered mt-3">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${tipovehiculos == null || tipovehiculos.isEmpty()}">
+                <td colspan="3" class="text-center">No hay registros disponibles</td>
+            </tr>
+            <tr th:each="tv:${tipovehiculos}">
+                <td scope="row" th:text="${tv.id}"></td>
+                <td th:text="${tv.tipovehiculo}"></td>
+                <td>
+                    <a class="btn btn-success"
+                       th:href="@{/tipovehiculosedit/} + ${tv.id}"
+                       title="Editar Registro">
+                        Editar
+                    </a>
+
+                    <a class="btn btn-danger" th:href="@{/tipovehiculosde/} + ${tv.id}"
+                       th:text="'Eliminar'" title="Eliminar registro"
+                       onclick="return confirm('¿Estas seguro de eliminar este registro?')">
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+</center>
+<!-- Modal para agregar un nuevo tipo de vehículo -->
+<div class="modal" id="nuevoTipoVehiculo">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Tipo de Vehículo</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form method="post" th:object="${tipo_vehiculo}" th:action="@{/tipoVehiculosave}">
+                    <div class="form-group">
+                        <input type="hidden" th:field="*{id}">
+                        <label for="tipovehiculo">Nombre del Tipo de Vehículo:</label>
+                        <input class="form-control"
+                               id="tipovehiculo"
+                               name="tipovehiculo"
+                               th:field="*{tipovehiculo}"
+                               required
+                               type="text">
+                        <small></small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="text-center mt-5">
+    <div class="foot">
+        <h3>Contáctanos</h3>
+    </div>
+    <div class="logo">
+        <img th:src="@{/img/Capturalogo.JPG}" alt="logo"/>
+    </div>
+    <div style="text-align: center;" class="redes">
+        <p>Redes Sociales:</p>
+        <img th:src="@{/img/pic_whats.png}" alt="Whatsapp"/>
+        <img th:src="@{/img/pic_face.png}" alt="Facebook"/>
+        <img th:src="@{/img/pic_insta.png}" alt="Instagram"/>
+        <p>Correo: <br/>
+            vircade@gmail.com</p>
+    </div>
+    <div style="text-align: center;" class="nombres">
+        <p>Laura Daniela Benavides Rodriguez: Diseñadora Backend</p>
+        <p>Shanon Natalia Rodriguez: Diseñadora Frontend</p>
+        <p>Santiago Vega: Diseñador Web</p>
+        <p>Nicolas Salamanca:Diseñador Web</p>
+    </div>
+</footer>
+<script>
+    new DataTable('#Solicitudes', {
+    language: {
+        search: "Buscar:",
+        paginate: {
+            first: "Primero",
+            last: "Último",
+            next: "Siguiente",
+            previous: "Anterior"
+        },
+        lengthMenu: "Mostrar _MENU_ registros por página",
+        info: "Mostrando _START_ a _END_ de _TOTAL_ registros",
+        infoEmpty: "No hay registros disponibles",
+        infoFiltered: "(filtrado de _MAX_ registros en total)",
+        zeroRecords: "No se encontraron resultados",
+        emptyTable: "No hay datos disponibles en la tabla"
+        }
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXlYBb2HnENP+ghz8hxI4Q6RAcn9GqE89eUtD5isD2Bg/uJ9Tory7kPpMP4h"
+        crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhG81rxpGoYKo1pm" crossorigin="anonymous">
+</script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asesores Registrados</title>
+    <link rel="stylesheet" href="../static/css/styleAsesor.css">
+</head>
+<body>
+
+<button id="backButton" class="back-button"><a href="asesor/dashboard.html">Atrás</a></button>
+
+<div class="container">
+    <h1>Asesores Registrados</h1>
+    <br>
+
+    <div class="container2">
+        <h2>Lista de Asesores</h2>
+        <ul id="asesorList"></ul>
+    </div>
+</div>
+
+<script>
+    // Simulación de datos de asesores registrados
+    const asesores = [
+        { nombre: "Jose Rojas", telefono: "123456789", correo: "jose.rojas@gmail.com" },
+        { nombre: "Maria Perez", telefono: "987654321", correo: "maria.perez@gmail.com" },
+        { nombre: "Carlos Gomez", telefono: "456789123", correo: "carlos.gomez@gmail.com" }
+    ];
+
+    // Función para mostrar los asesores en la lista
+    function mostrarAsesores() {
+        const asesorList = document.getElementById('asesorList');
+        asesorList.innerHTML = ''; // Limpiar la lista antes de mostrar
+
+        asesores.forEach((asesor, index) => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <span>${asesor.nombre} - ${asesor.telefono} - ${asesor.correo}</span>
+                <button class="button1" onclick="eliminarAsesor(${index})">Eliminar</button>
+            `;
+            asesorList.appendChild(li);
+        });
+    }
+
+    // Función para eliminar un asesor
+    function eliminarAsesor(index) {
+        // Mostrar alerta de confirmación
+        const confirmacion = confirm("¿Desea eliminar este asesor?");
+        if (confirmacion) {
+            // Eliminar el asesor del arreglo
+            asesores.splice(index, 1);
+            mostrarAsesores(); // Volver a mostrar la lista actualizada
+        }
+    }
+
+    // Llamar a la función para mostrar los asesores al cargar la página
+    mostrarAsesores();
+</script>
+
+<footer>
+    <div class="foot">
+        <h3>Contáctanos</h3>
+    </div>
+    <div class="logo">
+        <img src="../static/img/Capturalogo.JPG" alt="logo">
+    </div>
+    <div class="redes">
+        <p>Redes Sociales:</p>
+        <img src="../static/img/pic_whats.png" alt="Whatsapp">
+        <img src="../static/img/pic_face.png" alt="Facebook">
+        <img src="../static/img/pic_insta.png" alt="Instagram ">
+        <p>Correo: <br>vircade@gmail.com</p>
+    </div>
+    <div class="nombres">
+        <p>Laura Daniela Benavides Rodriguez: Diseñadora Backend</p>
+        <p>Shanon Natalia Rodriguez: Diseñadora Frontend </p>
+        <p>Santiago Vega: Diseñador Web</p>
+        <p>Nicolas Salamanca: Diseñador Web</p>
+    </div>
+</footer>
+</body>
+</html>
